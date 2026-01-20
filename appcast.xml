@@ -4,6 +4,18 @@
         <title>CaddyBar</title>
         <item>
             <title>1.0.0</title>
+            <pubDate>Tue, 20 Jan 2026 19:17:08 -0300</pubDate>
+            <sparkle:version>645</sparkle:version>
+            <sparkle:shortVersionString>1.0.0</sparkle:shortVersionString>
+            <sparkle:minimumSystemVersion>15.6</sparkle:minimumSystemVersion>
+            <sparkle:releaseNotesLink>https://lakecabin.github.io/caddybar/CaddyBar-latest.html</sparkle:releaseNotesLink>
+            <enclosure url="https://github.com/lakecabin/caddybar/releases/download/v1.0.0/CaddyBar-latest.dmg" length="49044420" type="application/octet-stream" sparkle:edSignature="wzZQ5pURRWnOg8D8XU/BI1TIlKnK7zAVr44SvOlPyk5zqzr63+gX8mphelKY1CHcgom45tDmqV7sxHXufggMDQ=="/>
+            <sparkle:deltas>
+                <enclosure url="https://github.com/lakecabin/caddybar/releases/download/v1.0.0/CaddyBar645-644.delta" sparkle:deltaFrom="644" length="34034" type="application/octet-stream" sparkle:deltaFromSparkleExecutableSize="860528" sparkle:deltaFromSparkleLocales="de,he,ar,el,ja,fa,uk" sparkle:edSignature="K5PSHignOJSlEbXWWdynmxUijAuG3h8n5zVqYtTeKZOthjq3s4LI/LkbzcKDU1ITUTZ63Yd8GSHRwOcY6vyOAg=="/>
+            </sparkle:deltas>
+        </item>
+        <item>
+            <title>1.0.0</title>
             <pubDate>Tue, 20 Jan 2026 19:11:07 -0300</pubDate>
             <sparkle:version>644</sparkle:version>
             <sparkle:shortVersionString>1.0.0</sparkle:shortVersionString>
