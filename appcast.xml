@@ -1,0 +1,15 @@
+<?xml version="1.0" standalone="yes"?>
+<rss xmlns:sparkle="http://www.andymatuschak.org/xml-namespaces/sparkle" version="2.0">
+    <channel>
+        <title>CaddyBar</title>
+        <item>
+            <title>1.0.0</title>
+            <pubDate>Tue, 20 Jan 2026 19:11:07 -0300</pubDate>
+            <sparkle:version>644</sparkle:version>
+            <sparkle:shortVersionString>1.0.0</sparkle:shortVersionString>
+            <sparkle:minimumSystemVersion>15.6</sparkle:minimumSystemVersion>
+            <sparkle:releaseNotesLink>https://lakecabin.github.io/caddybar/CaddyBar-1.0.0.html</sparkle:releaseNotesLink>
+            <enclosure url="https://github.com/lakecabin/caddybar/releases/download/v1.0.0/CaddyBar-1.0.0.dmg" length="49044561" type="application/octet-stream" sparkle:edSignature="dpeFj9FQQC1t8vAvGya17yP0/IAQJa0L+oBzUeX6ohu2FvFUzoiyKTLaASz8gSgMzmhN7a93DUxIS7XjRdu/Ag=="/>
+        </item>
+    </channel>
+</rss>

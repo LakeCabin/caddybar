@@ -1,0 +1,330 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>CaddyBar 1.0.1 - Release Notes</title>
+        <style>
+            :root {
+                --primary: #3b82f6;
+                --secondary: #8b5cf6;
+                --dark: #0f172a;
+                --gray: #64748b;
+                --gray-light: #cbd5e1;
+                --gray-lighter: #f1f5f9;
+                --white: #ffffff;
+                --gradient: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%);
+            }
+
+            * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+            }
+
+            body {
+                font-family:
+                    -apple-system, BlinkMacSystemFont, "SF Pro Display",
+                    "Segoe UI", "Helvetica Neue", sans-serif;
+                color: var(--dark);
+                background: var(--white);
+                line-height: 1.6;
+                -webkit-font-smoothing: antialiased;
+                padding: 40px 20px;
+            }
+
+            .container {
+                max-width: 800px;
+                margin: 0 auto;
+            }
+
+            .header {
+                text-align: center;
+                padding-bottom: 40px;
+                border-bottom: 1px solid var(--gray-lighter);
+                margin-bottom: 40px;
+            }
+
+            .logo {
+                display: inline-flex;
+                align-items: center;
+                gap: 12px;
+                margin-bottom: 20px;
+            }
+
+            .logo-icon {
+                width: 48px;
+                height: 48px;
+            }
+
+            .logo-text {
+                font-size: 28px;
+                font-weight: 700;
+                color: var(--dark);
+            }
+
+            .version-badge {
+                display: inline-block;
+                padding: 6px 16px;
+                background: var(--gradient);
+                color: var(--white);
+                border-radius: 20px;
+                font-size: 14px;
+                font-weight: 600;
+                margin-bottom: 16px;
+            }
+
+            h1 {
+                font-size: 36px;
+                font-weight: 700;
+                margin-bottom: 12px;
+                letter-spacing: -0.02em;
+            }
+
+            .subtitle {
+                font-size: 18px;
+                color: var(--gray);
+            }
+
+            h2 {
+                font-size: 24px;
+                font-weight: 700;
+                margin: 32px 0 16px;
+                color: var(--dark);
+            }
+
+            h3 {
+                font-size: 20px;
+                font-weight: 600;
+                margin: 24px 0 12px;
+                color: var(--dark);
+            }
+
+            p {
+                font-size: 16px;
+                color: var(--gray);
+                margin-bottom: 16px;
+                line-height: 1.7;
+            }
+
+            ul {
+                list-style: none;
+                margin: 16px 0 24px;
+            }
+
+            li {
+                padding: 8px 0 8px 24px;
+                position: relative;
+                color: var(--gray);
+                line-height: 1.6;
+            }
+
+            li::before {
+                content: "•";
+                position: absolute;
+                left: 0;
+                color: var(--primary);
+                font-weight: 700;
+            }
+
+            strong {
+                color: var(--dark);
+                font-weight: 600;
+            }
+
+            a {
+                color: var(--primary);
+                text-decoration: none;
+                font-weight: 500;
+            }
+
+            a:hover {
+                text-decoration: underline;
+            }
+
+            .feature-list {
+                display: grid;
+                gap: 16px;
+                margin: 24px 0;
+            }
+
+            .feature-item {
+                padding: 16px;
+                background: var(--gray-lighter);
+                border-radius: 12px;
+            }
+
+            .feature-item h3 {
+                margin: 0 0 8px;
+                font-size: 18px;
+            }
+
+            .feature-item p {
+                margin: 0;
+                font-size: 15px;
+            }
+
+            .footer {
+                margin-top: 60px;
+                padding-top: 30px;
+                border-top: 1px solid var(--gray-lighter);
+                text-align: center;
+            }
+
+            .footer p {
+                font-size: 14px;
+                color: var(--gray);
+            }
+
+            .footer a {
+                color: var(--primary);
+            }
+
+            @media (max-width: 600px) {
+                h1 {
+                    font-size: 28px;
+                }
+
+                h2 {
+                    font-size: 22px;
+                }
+
+                .container {
+                    padding: 0 16px;
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <div class="header">
+                <div class="logo">
+                    <svg
+                        class="logo-icon"
+                        viewBox="0 0 48 48"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                    >
+                        <rect
+                            width="48"
+                            height="48"
+                            rx="12"
+                            fill="url(#gradient)"
+                        />
+                        <path
+                            d="M14 24C14 19.5817 17.5817 16 22 16H26C30.4183 16 34 19.5817 34 24V26C34 30.4183 30.4183 34 26 34H22C17.5817 34 14 30.4183 14 26V24Z"
+                            fill="white"
+                        />
+                        <path
+                            d="M20 24C20 21.7909 21.7909 20 24 20C26.2091 20 28 21.7909 28 24C28 26.2091 26.2091 28 24 28C21.7909 28 20 26.2091 20 24Z"
+                            fill="url(#gradient)"
+                        />
+                        <defs>
+                            <linearGradient
+                                id="gradient"
+                                x1="0"
+                                y1="0"
+                                x2="48"
+                                y2="48"
+                                gradientUnits="userSpaceOnUse"
+                            >
+                                <stop stop-color="#3B82F6" />
+                                <stop offset="1" stop-color="#8B5CF6" />
+                            </linearGradient>
+                        </defs>
+                    </svg>
+                    <span class="logo-text">CaddyBar</span>
+                </div>
+                <span class="version-badge">Version 1.0.1</span>
+                <h1>What's New</h1>
+                <p class="subtitle">
+                    We're excited to announce the first stable release of
+                    CaddyBar
+                </p>
+            </div>
+
+            <h2>What is CaddyBar?</h2>
+            <p>
+                CaddyBar lives in your menu bar and lets you create local
+                domains with automatic SSL certificates (HTTPS) effortlessly. No
+                more manually editing Caddyfiles or managing complex reverse
+                proxy configurations.
+            </p>
+
+            <h2>Key Features</h2>
+
+            <div class="feature-list">
+                <div class="feature-item">
+                    <h3>Menu Bar Integration</h3>
+                    <p>
+                        Clean, unobtrusive interface that stays out of your way
+                        with real-time status indicators showing Caddy's running
+                        state.
+                    </p>
+                </div>
+
+                <div class="feature-item">
+                    <h3>Site Management</h3>
+                    <p>
+                        Visual interface for creating and managing reverse proxy
+                        sites with support for custom domains and subdomains.
+                    </p>
+                </div>
+
+                <div class="feature-item">
+                    <h3>Automatic HTTPS</h3>
+                    <p>
+                        Built-in TLS/SSL support powered by Caddy's automatic
+                        certificate management with zero-configuration
+                        certificates.
+                    </p>
+                </div>
+
+                <div class="feature-item">
+                    <h3>Flexible Configuration</h3>
+                    <p>
+                        Run in standard mode (ports 8080/8443) or privileged
+                        mode (ports 80/443) with custom HTTP headers support.
+                    </p>
+                </div>
+
+                <div class="feature-item">
+                    <h3>Advanced Features</h3>
+                    <p>
+                        Optional privileged helper for ports 80/443, live
+                        logging to monitor Caddy logs, and auto-updates via
+                        Sparkle.
+                    </p>
+                </div>
+            </div>
+
+            <h2>System Requirements</h2>
+            <ul>
+                <li>macOS 15.0 (Sequoia) or later</li>
+                <li>Apple Silicon (M1/M2/M3/M4) or Intel-based Mac</li>
+            </ul>
+
+            <h2>Support</h2>
+            <ul>
+                <li>
+                    <strong>Issues:</strong> Report bugs at
+                    <a href="https://github.com/lakecabin/caddybar"
+                        >github.com/lakecabin/caddybar</a
+                    >
+                </li>
+                <li>
+                    <strong>Documentation:</strong> Visit
+                    <a href="https://caddybar.app">caddybar.app</a> for guides
+                    and tutorials
+                </li>
+            </ul>
+
+            <div class="footer">
+                <p>
+                    Thank you for using CaddyBar! Here's to smoother local web
+                    development.
+                </p>
+            </div>
+        </div>
+    </body>
+</html>
