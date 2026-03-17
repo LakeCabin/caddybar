@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>CaddyBar 1.0.3 - Release Notes</title>
+        <title>CaddyBar 1.1.0 - Release Notes</title>
         <style>
             :root {
                 --primary: #3b82f6;
@@ -235,42 +235,43 @@
                     </svg>
                     <span class="logo-text">CaddyBar</span>
                 </div>
-                <span class="version-badge">Version 1.0.3</span>
+                <span class="version-badge">Version 1.1.0</span>
                 <h1>What's New</h1>
                 <p class="subtitle">
-                    Helper installation reliability and code-signing hardening
+                    Improved stability, performance, and internal architecture
                 </p>
             </div>
 
-            <h2>What's Fixed</h2>
+            <h2>Improvements</h2>
             <ul>
                 <li>
-                    <strong>SMJobBless Reliability:</strong> Improved privileged
-                    helper installation flow to reduce
-                    <code>CFErrorDomainLaunchd error 4</code> failures caused by
-                    signing requirement mismatches.
+                    <strong>Better Concurrency Safety:</strong> Strengthened
+                    thread-safety across the app to prevent potential data races.
                 </li>
                 <li>
-                    <strong>Signing Requirements Alignment:</strong>
-                    <code>SMPrivilegedExecutables</code> and
-                    <code>SMAuthorizedClients</code> now use a consistent
-                    Team-ID-based requirement, avoiding brittle certificate-name
-                    coupling.
+                    <strong>Cleaner Internal Architecture:</strong> Separated
+                    Caddy and CoreDNS communication into dedicated interfaces
+                    for better reliability and maintainability.
                 </li>
                 <li>
-                    <strong>Helper Signing Configuration:</strong> Added
-                    explicit helper entitlements configuration for both Debug
-                    and Release builds to ensure consistent code-sign outputs.
+                    <strong>Unified Error Handling:</strong> Consistent error
+                    messages and recovery suggestions throughout the app.
+                </li>
+            </ul>
+
+            <h2>Bug Fixes</h2>
+            <ul>
+                <li>
+                    Fixed potential crashes during process startup and
+                    license enforcement.
                 </li>
                 <li>
-                    <strong>Release Pipeline Hardening:</strong> Updated release
-                    signing steps to preserve nested signatures and helper
-                    integrity during packaging.
+                    Fixed memory leaks caused by background tasks not being
+                    properly cleaned up when no longer needed.
                 </li>
                 <li>
-                    <strong>Better Diagnostics:</strong> Added more detailed
-                    logging for SMJobBless errors (domain, code, and userInfo)
-                    to simplify troubleshooting.
+                    Improved site change notifications for more reliable
+                    Caddy configuration reloads.
                 </li>
             </ul>
 

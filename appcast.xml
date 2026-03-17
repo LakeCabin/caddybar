@@ -5,13 +5,13 @@
         <item>
             <title>1.1.0</title>
             <pubDate>Tue, 20 Jan 2026 19:17:08 -0300</pubDate>
-            <sparkle:version>656</sparkle:version>
+            <sparkle:version>676</sparkle:version>
             <sparkle:shortVersionString>1.1.0</sparkle:shortVersionString>
             <sparkle:minimumSystemVersion>15.6</sparkle:minimumSystemVersion>
             <sparkle:releaseNotesLink>https://lakecabin.github.io/caddybar/CaddyBar-latest.html</sparkle:releaseNotesLink>
-            <enclosure url="https://github.com/lakecabin/caddybar/releases/download/v1.1.0/CaddyBar-latest.dmg" length="49038807" type="application/octet-stream" sparkle:edSignature="z2m7lxRyyvRuEQCuZ/y3f/e9XBD8uu0OhinOOeXjzfiLCcNFN6Nrej8+Eeroy85ER5YGqZlYSbUXO71Tqq8dDQ=="/>
+            <enclosure url="https://github.com/lakecabin/caddybar/releases/download/v1.1.0/CaddyBar-latest.dmg" length="49892269" type="application/octet-stream" sparkle:edSignature="H4dwlx0Pfj38w1udBISV3Rxir1Fz9IU2klj7ktgJ3vZ6ZBk+DE2LdH0G3H7WGq5rXARAXAIf0amTAljF3GpwBw=="/>
             <sparkle:deltas>
-                <enclosure url="https://github.com/lakecabin/caddybar/releases/download/v1.1.0/CaddyBar656-644.delta" sparkle:deltaFrom="644" length="368886" type="application/octet-stream" sparkle:deltaFromSparkleExecutableSize="860528" sparkle:deltaFromSparkleLocales="de,he,ar,el,ja,fa,uk" sparkle:edSignature="Zd+hEv9YpGx2h/LeLqJrqDXIuKx+Rj/NVZy+tU/ghtUANVkyCJ7YyYDGx9aFwyuVRNh/2mWSDdC5h0VK/PbhBQ=="/>
+                <enclosure url="https://github.com/lakecabin/caddybar/releases/download/v1.1.0/CaddyBar676-644.delta" sparkle:deltaFrom="644" length="639670" type="application/octet-stream" sparkle:deltaFromSparkleExecutableSize="860528" sparkle:deltaFromSparkleLocales="de,he,ar,el,ja,fa,uk" sparkle:edSignature="uGItM5DgE1aqqwxkJ88kWLX6OZ6STjMUG9m3bguen8Fqgt1JRjyfD9BpPhwS2NvncF6SUVvyXaFxy0+ZKy6sBA=="/>
             </sparkle:deltas>
         </item>
         <item>
