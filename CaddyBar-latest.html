@@ -235,43 +235,88 @@
                     </svg>
                     <span class="logo-text">CaddyBar</span>
                 </div>
-                <span class="version-badge">Version 1.1.0</span>
+                <span class="version-badge">Version 1.1.1</span>
                 <h1>What's New</h1>
                 <p class="subtitle">
-                    Improved stability, performance, and internal architecture
+                    Reliable service lifecycle and improved startup behavior
                 </p>
+            </div>
+
+            <h2>New Features</h2>
+            <div class="feature-list">
+                <div class="feature-item">
+                    <h3>Docker Compose Certificate Injection</h3>
+                    <p>
+                        Inject the Caddy root CA certificate into your Docker
+                        Compose services so containers trust your local HTTPS
+                        domains. Automatically generates a
+                        <code>docker-compose.override.yml</code> with volume
+                        mounts, environment variables
+                        (<code>NODE_EXTRA_CA_CERTS</code>,
+                        <code>SSL_CERT_FILE</code>), and optional
+                        <code>extra_hosts</code> mappings to
+                        <code>host-gateway</code>.
+                    </p>
+                </div>
+                <div class="feature-item">
+                    <h3>Privacy-First Analytics</h3>
+                    <p>
+                        Integrated TelemetryDeck for anonymous, privacy-first
+                        usage analytics. No personal data is collected — only
+                        aggregate signals to help improve CaddyBar.
+                    </p>
+                </div>
             </div>
 
             <h2>Improvements</h2>
             <ul>
                 <li>
-                    <strong>Better Concurrency Safety:</strong> Strengthened
-                    thread-safety across the app to prevent potential data races.
+                    <strong>Automatic Caddy Startup:</strong> Caddy now
+                    auto-starts on app launch when there are active sites
+                    in privileged mode, matching the existing CoreDNS
+                    behavior.
                 </li>
                 <li>
-                    <strong>Cleaner Internal Architecture:</strong> Separated
-                    Caddy and CoreDNS communication into dedicated interfaces
-                    for better reliability and maintainability.
+                    <strong>Reactive Status Updates:</strong> The menu bar
+                    now observes Caddy's privileged service state in
+                    real-time, ensuring the UI always reflects the actual
+                    running status.
                 </li>
                 <li>
-                    <strong>Unified Error Handling:</strong> Consistent error
-                    messages and recovery suggestions throughout the app.
+                    <strong>Faster Shutdown:</strong> Caddy and CoreDNS now
+                    stop in parallel on app quit with a 10-second safety
+                    timeout to prevent the app from hanging.
+                </li>
+                <li>
+                    <strong>Centralized Helper Verification:</strong>
+                    Removed duplicated helper status checks from individual
+                    services. Helper installation is now managed centrally.
+                </li>
+                <li>
+                    <strong>Selectable Extra Hosts:</strong> When injecting
+                    certificates into Docker Compose, choose which CaddyBar
+                    sites to add as <code>extra_hosts</code> so containers
+                    can reach other local services (e.g., Keycloak on
+                    <code>sso.htc.test</code>).
                 </li>
             </ul>
 
             <h2>Bug Fixes</h2>
             <ul>
                 <li>
-                    Fixed potential crashes during process startup and
-                    license enforcement.
+                    Fixed Caddy showing as "Stopped" on app relaunch even
+                    though it was running. The service now checks the
+                    actual process PID on initialization.
                 </li>
                 <li>
-                    Fixed memory leaks caused by background tasks not being
-                    properly cleaned up when no longer needed.
+                    Fixed a race condition where the UI could query Caddy's
+                    status before the XPC connection was ready, missing the
+                    running state.
                 </li>
                 <li>
-                    Improved site change notifications for more reliable
-                    Caddy configuration reloads.
+                    Fixed Docker Compose certificate copy failing due to
+                    macOS TCC permissions. The certificate is now read via
+                    the privileged helper, bypassing sandbox restrictions.
                 </li>
             </ul>
 
