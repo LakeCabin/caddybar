@@ -235,35 +235,70 @@
                     </svg>
                     <span class="logo-text">CaddyBar</span>
                 </div>
-                <span class="version-badge">Version 1.1.1</span>
+                <span class="version-badge">Version 1.2.0</span>
                 <h1>What's New</h1>
                 <p class="subtitle">
-                    Reliable service lifecycle and improved startup behavior
+                    Share tunnels, health checks, mobile certificates, export/import, and more
                 </p>
             </div>
 
             <h2>New Features</h2>
             <div class="feature-list">
                 <div class="feature-item">
-                    <h3>Docker Compose Certificate Injection</h3>
+                    <h3>Share Tunnel (Cloudflare Tunnel)</h3>
                     <p>
-                        Inject the Caddy root CA certificate into your Docker
-                        Compose services so containers trust your local HTTPS
-                        domains. Automatically generates a
-                        <code>docker-compose.override.yml</code> with volume
-                        mounts, environment variables
-                        (<code>NODE_EXTRA_CA_CERTS</code>,
-                        <code>SSL_CERT_FILE</code>), and optional
-                        <code>extra_hosts</code> mappings to
-                        <code>host-gateway</code>.
+                        Expose any local site to the internet with one click.
+                        CaddyBar creates a temporary public URL via
+                        <strong>Cloudflare Tunnel</strong> — perfect for
+                        demos, webhook testing, and sharing work with clients.
+                        Traffic routes through your Caddy configuration, so
+                        all headers, middleware, and TLS settings are preserved.
+                        No account required — uses Cloudflare's free
+                        <code>trycloudflare.com</code> quick tunnels.
                     </p>
                 </div>
                 <div class="feature-item">
-                    <h3>Privacy-First Analytics</h3>
+                    <h3>Export & Import Sites</h3>
                     <p>
-                        Integrated TelemetryDeck for anonymous, privacy-first
-                        usage analytics. No personal data is collected — only
-                        aggregate signals to help improve CaddyBar.
+                        Share your site configurations with teammates or back
+                        them up. Export all sites to a <code>.caddybar</code>
+                        file and import them on another machine. Duplicate
+                        domains are automatically skipped during import.
+                    </p>
+                </div>
+                <div class="feature-item">
+                    <h3>Backend Health Checks</h3>
+                    <p>
+                        CaddyBar now monitors backend health with periodic HTTP
+                        HEAD requests every 30 seconds. Each site card shows a
+                        live status indicator — green for healthy, red for
+                        unreachable, yellow while checking.
+                    </p>
+                </div>
+                <div class="feature-item">
+                    <h3>Mobile Certificate QR Code</h3>
+                    <p>
+                        Share the root CA certificate with iOS and Android
+                        devices via a temporary local HTTP server and QR code.
+                        Scan from your phone to download and install the
+                        certificate for trusted local HTTPS.
+                    </p>
+                </div>
+                <div class="feature-item">
+                    <h3>Wildcard Domain Support</h3>
+                    <p>
+                        Configure wildcard domains like
+                        <code>*.myapp.test</code> to handle all subdomains
+                        with a single site. Wildcard sites are identified with
+                        a purple badge in the menu bar.
+                    </p>
+                </div>
+                <div class="feature-item">
+                    <h3>Quick Access to Sites</h3>
+                    <p>
+                        Open any local site in your browser with one click from
+                        the menu bar. Each site card now includes a globe button
+                        that launches the site URL directly.
                     </p>
                 </div>
             </div>
@@ -271,52 +306,19 @@
             <h2>Improvements</h2>
             <ul>
                 <li>
-                    <strong>Automatic Caddy Startup:</strong> Caddy now
-                    auto-starts on app launch when there are active sites
-                    in privileged mode, matching the existing CoreDNS
-                    behavior.
+                    <strong>Certificate QR Sheet:</strong> The mobile
+                    certificate QR code modal now includes a close button
+                    for easy dismissal.
                 </li>
                 <li>
-                    <strong>Reactive Status Updates:</strong> The menu bar
-                    now observes Caddy's privileged service state in
-                    real-time, ensuring the UI always reflects the actual
-                    running status.
+                    <strong>Smart Docker Compose Deduplication:</strong>
+                    When injecting <code>extra_hosts</code>, CaddyBar now
+                    detects existing entries and skips duplicates
+                    automatically.
                 </li>
                 <li>
-                    <strong>Faster Shutdown:</strong> Caddy and CoreDNS now
-                    stop in parallel on app quit with a 10-second safety
-                    timeout to prevent the app from hanging.
-                </li>
-                <li>
-                    <strong>Centralized Helper Verification:</strong>
-                    Removed duplicated helper status checks from individual
-                    services. Helper installation is now managed centrally.
-                </li>
-                <li>
-                    <strong>Selectable Extra Hosts:</strong> When injecting
-                    certificates into Docker Compose, choose which CaddyBar
-                    sites to add as <code>extra_hosts</code> so containers
-                    can reach other local services (e.g., Keycloak on
-                    <code>sso.htc.test</code>).
-                </li>
-            </ul>
-
-            <h2>Bug Fixes</h2>
-            <ul>
-                <li>
-                    Fixed Caddy showing as "Stopped" on app relaunch even
-                    though it was running. The service now checks the
-                    actual process PID on initialization.
-                </li>
-                <li>
-                    Fixed a race condition where the UI could query Caddy's
-                    status before the XPC connection was ready, missing the
-                    running state.
-                </li>
-                <li>
-                    Fixed Docker Compose certificate copy failing due to
-                    macOS TCC permissions. The certificate is now read via
-                    the privileged helper, bypassing sandbox restrictions.
+                    <strong>Updated Documentation:</strong> Comprehensive
+                    docs for all new features added to the website.
                 </li>
             </ul>
 
